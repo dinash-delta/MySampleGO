@@ -1,0 +1,2 @@
+# MySampleGO
+Testing Go Server
