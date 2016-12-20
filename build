@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "Executing ./build command found under MySampleGO Repo"
-
 echo "Let us pretend that this is building something ... and takes 20 seconds"
 
 count=0
@@ -13,4 +12,19 @@ while [ "$count" -lt 20 ]; do
 
     sleep 1
 done
+
+cat >my-artifact.html <<EOF
+<html>
+<body>
+<h3>An example artifact</h3>
+<pre>
+==== ==== ====
+An example artifact, created on: $(date)
+
+Pipeline which created it: $GO_PIPELINE_NAME
+Pipeline counter was: $GO_PIPELINE_COUNTER
+==== ==== ====
+</pre>
+<body>
+</html>
 EOF
